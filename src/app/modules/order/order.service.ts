@@ -1,5 +1,4 @@
 import Product from "../product/product.model";
-import { TProduct } from "../product/product.type";
 import Order from "./order.model";
 import { TOrder } from "./order.type";
 import { orderValidationSchema } from "./order.validation";
@@ -16,11 +15,13 @@ const createOrderInDB = async (order: TOrder) => {
           "inventory.quantity": available - order.quantity,
           "inventory.inStock": available - order.quantity === 0 ? false : true,
         });
+        console.log(updateProduct);
         return { data: newOrder };
       } else {
         throw new Error("Product not available");
       }
     }
+    return { data: null };
   } catch (error) {
     console.log("create_order_sevice_error", error);
     return { error: error };
