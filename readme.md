@@ -16,10 +16,25 @@ This is a simple e-commerce backend application for managing products and orders
 
   ```json
   {
-    "name": "Product Name",
-    "description": "Product Description",
-    "price": 100,
-    "stock": 10
+    "name": "iPhone 13",
+    "description": "A sleek and powerful smartphone with cutting-edge features.",
+    "price": 999,
+    "category": "Electronics",
+    "tags": ["smartphone", "Apple", "iOS"],
+    "variants": [
+      {
+        "type": "Color",
+        "value": "Midnight Blue"
+      },
+      {
+        "type": "Storage Capacity",
+        "value": "256GB"
+      }
+    ],
+    "inventory": {
+      "quantity": 50,
+      "inStock": true
+    }
   }
   ```
 
@@ -45,10 +60,25 @@ This is a simple e-commerce backend application for managing products and orders
 
   ```json
   {
-    "name": "Updated Name",
-    "description": "Updated Description",
-    "price": 150,
-    "stock": 5
+    "name": "iPhone 13",
+    "description": "A sleek and powerful smartphone with cutting-edge features.",
+    "price": 999,
+    "category": "Electronics",
+    "tags": ["smartphone", "Apple", "iOS"],
+    "variants": [
+      {
+        "type": "Color",
+        "value": "Midnight Blue"
+      },
+      {
+        "type": "Storage Capacity",
+        "value": "256GB"
+      }
+    ],
+    "inventory": {
+      "quantity": 50,
+      "inStock": true
+    }
   }
   ```
 
@@ -70,10 +100,10 @@ This is a simple e-commerce backend application for managing products and orders
 
   ```json
   {
-    "productId": "ProductID",
-    "quantity": 2,
-    "customerName": "Customer Name",
-    "address": "Customer Address"
+    "email": "level2@programming-hero.com",
+    "productId": "5fd67e890b60c903cd8544a3",
+    "price": 999,
+    "quantity": 1
   }
   ```
 
@@ -88,28 +118,3 @@ This is a simple e-commerce backend application for managing products and orders
   ```
   GET /api/orders/:id
   ```
-
-- **Update Order**
-
-  ```
-  PUT /api/orders/:id
-  ```
-
-  **Request Body:**
-
-  ```json
-  {
-    "quantity": 3,
-    "status": "Shipped"
-  }
-  ```
-
-- **Delete Order**
-
-  ```
-  DELETE /api/orders/:id
-  ```
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
